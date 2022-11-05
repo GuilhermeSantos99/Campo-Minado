@@ -7,14 +7,19 @@ typedef struct {
   int vizinhos;
 } Celula;
 
+
 void inicializarJogo();
 
 void sortearBombas(int n);
 
-void contarBombas();
+int coordenadaValida();
 
-void imprimir();
+int quantBombasVizinhas(int l, int c);
+
+void contarBombas();
 
 void imprimirLinha();
 
-#endif // MINEFIELD_H_INCLUDED
+void imprimir();
+
+#endif
