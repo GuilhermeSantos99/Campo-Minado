@@ -1,4 +1,11 @@
-// Procedimento par inicializar matriz
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#include "minefield.h"
+
+Celula jogo[10][10];
+int l, c, tam = 10;
+
 void inicializarJogo() {
   for (l = 0; l < tam; l++) {
     for (c = 0; c < tam; c++) {
@@ -9,7 +16,6 @@ void inicializarJogo() {
   }
 }
 
-// Procedimento para sortear n bombas
 void sortearBombas(int n) {
   int i;
   srand(time(NULL));
@@ -25,8 +31,6 @@ void sortearBombas(int n) {
     }
   }
 }
-
-// Procedimento para contar as bombas no entorno
 
 int coordenadaValida() {
   if (l >= 0 && l < tam && c >= 0 && c < tam) {
@@ -62,8 +66,6 @@ void contarBombas() {
   }
 }
 
-// Procedimetno para imprimir o jogo
-
 void imprimirLinha() {
   printf(
       "\n\t   ------------------------------------------------------------\n");
@@ -74,12 +76,12 @@ void imprimir() {
 
   for (l = 0; l < tam; l++) {
 
-    printf(" %d    ", l); // Íncides das colunas
+    printf(" %d    ", l);
   }
   imprimirLinha();
 
   for (l = 0; l < tam; l++) {
-    printf("\t%d  |", l); // Índices das linhas
+    printf("\t%d  |", l);
     for (c = 0; c < tam; c++) {
       if (jogo[l][c].estaAberta) {
 
